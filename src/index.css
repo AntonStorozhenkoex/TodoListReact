@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Manjari, "sans-serif"
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.root {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px;
+}
+
+.myApp {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-box-shadow: -2px 3px 38px -2px rgba(27, 135, 217, 0.39);
+    -moz-box-shadow: -2px 3px 38px -2px rgba(27, 135, 217, 0.39);
+    box-shadow: -2px 3px 38px -2px rgba(27, 135, 217, 0.39);
+}
+
+.input {
+    height: 25px;
+    justify-self: revert;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 80%;
+}
+
+.addButton {
+    margin-left: 10px;
+    padding: 10px 17px;
+    background-color: #8d8;
+    border: 1px solid #007e00;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.list {
+    padding: 0;
+    margin: 10px 0 10px 0;
+}
+
+.listItem {
+    padding: 10px 0 10px 10px;
+    border-radius: 5px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    transition: background-color .5s;
+}
+
+.listItem:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+li {
+    width: 100%;
+}
+
+.deleteButton {
+    border: none;
+    background-color: transparent;
+    color: red;
+}
+
+.deleteButton:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.done {
+    text-decoration: line-through;
+    color: grey;
+    display: inline-block;
+}
+
+.notDone {
+    color: black;
+    display: inline-block;
+}
+
+.footer {
+    display: flex;
+    padding-top: 10px;
+    width: 100%;
+    border-top: 1px solid rgba(27, 135, 217, 0.39);
+}
+
+.footerButton {
+    font-family: Manjari, "sans-serif";
+    font-size: 12px;
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid rgba(27, 135, 217, 0.39);
+    transition: background-color 1s;
+
+}
+
+.footerButton:last-child {
+    border-right: 1px solid rgba(27, 135, 217, 0.39);
+}
+
+.footerButton:hover {
+    background-color: #b6e3d4;
+}
