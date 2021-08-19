@@ -1,10 +1,16 @@
 import React from "react";
-import '../../index.css'
+import "../../index.css";
 
-const ButtonFooter = ({onClick, title}) => {
-    return (
-        <button className='footerButton' onClick={onClick}>{title}</button>
-    )
-}
+const ButtonFooter = ({ onClick, title, filter, filterExpValue }) => {
+  console.log(filterExpValue, filter);
+  return (
+    <button
+      className={filterExpValue === filter ? "selectedButton" : "footerButton"}
+      onClick={onClick}
+    >
+      {title}
+    </button>
+  );
+};
 
 export default ButtonFooter;

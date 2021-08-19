@@ -37,7 +37,7 @@ code {
     border-radius: 4px;
     border: 1px solid #ccc;
     padding: 5px;
-    width: 80%;
+    width: 75%;
 }
 
 .addButton {
@@ -53,18 +53,19 @@ code {
 }
 
 .list {
+    list-style-type: none;
     padding: 0;
     margin: 10px 0 10px 0;
 }
 
 .listItem {
-    padding: 10px 0 10px 10px;
     border-radius: 5px;
     width: 95%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
     transition: background-color .5s;
+
 }
 
 .listItem:hover {
@@ -73,6 +74,7 @@ code {
 }
 
 li {
+    padding: 10px 0 10px 10px;
     width: 100%;
 }
 
@@ -100,19 +102,22 @@ li {
 
 .footer {
     display: flex;
-    padding-top: 10px;
+    padding-top: 5px;
     width: 100%;
     border-top: 1px solid rgba(27, 135, 217, 0.39);
 }
 
 .footerButton {
     font-family: Manjari, "sans-serif";
-    font-size: 12px;
-    padding: 3px;
+    font-size: 16px;
+    padding: 3px 3px 3px 3px;
     background-color: transparent;
     border: none;
     border-left: 1px solid rgba(27, 135, 217, 0.39);
+    border-right: 1px solid rgba(27, 135, 217, 0.39);
     transition: background-color 1s;
+    width: 100px;
+    height: 30px;
 
 }
 
@@ -123,3 +128,20 @@ li {
 .footerButton:hover {
     background-color: #b6e3d4;
 }
+
+.selectedButton {
+    border: none;
+    font-family: Manjari, "sans-serif";
+    font-size: 16px;
+    padding: 3px 3px 3px 3px;
+    background-color: #b6e3d4;
+    transition: background-color 0.4s;
+
+    width: 100px;
+    height: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
