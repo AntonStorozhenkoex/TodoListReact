@@ -1,12 +1,9 @@
 import React from "react";
 import "../../index.css";
 
-const BtnDelete = ({ setTodo, todos, id }) => {
+const BtnDelete = ({ deleteItem }) => {
   return (
-    <button
-      className="deleteButton"
-      onClick={() => setTodo(todos.filter((todo) => todo.id !== id))}
-    >
+    <button className="deleteButton" onClick={deleteItem}>
       X
     </button>
   );

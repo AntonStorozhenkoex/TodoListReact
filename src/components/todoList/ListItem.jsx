@@ -3,6 +3,9 @@ import BtnDelete from "./ButtonDelete";
 import "../../index.css";
 
 const ListItem = ({ todo, setTodo, todos, listItemChange }) => {
+  const deleteItem = () => {
+    setTodo(todos.filter((item) => item.id !== todo.id));
+  };
   return (
     <div className="listItem">
       <li
@@ -11,7 +14,7 @@ const ListItem = ({ todo, setTodo, todos, listItemChange }) => {
       >
         {todo.value}
       </li>
-      <BtnDelete todos={todos} id={todo.id} setTodo={setTodo} />
+      <BtnDelete deleteItem={deleteItem} />
     </div>
   );
 };

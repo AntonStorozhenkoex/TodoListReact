@@ -1,12 +1,11 @@
 import React from "react";
 import "../../index.css";
 
-const ButtonFooter = ({ onClick, title, filter, filterExpValue }) => {
-  console.log(filterExpValue, filter);
+const ButtonFooter = ({ changeFilter, title, filter, filterExpValue }) => {
   return (
     <button
       className={filterExpValue === filter ? "selectedButton" : "footerButton"}
-      onClick={onClick}
+      onClick={changeFilter}
     >
       {title}
     </button>

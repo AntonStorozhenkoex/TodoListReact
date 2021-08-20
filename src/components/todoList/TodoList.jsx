@@ -15,14 +15,12 @@ const TodoList = ({
   return (
     <div>
       <Form handleAddTodo={handleAddTodo} todos={todos} />
-
       <List
         listItemChange={listItemChange}
         getTodosByFilter={getTodosByFilter}
         setTodo={setTodos}
         todos={todos}
       />
-
       <Footer filter={filter} setFilter={setFilter} setTodo={setTodos} />
     </div>
   );

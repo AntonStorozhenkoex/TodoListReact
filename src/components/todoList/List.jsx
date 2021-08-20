@@ -14,7 +14,7 @@ const List = ({ todos, setTodo, getTodosByFilter, listItemChange }) => {
           key={todo.id}
         />
       ))}
-      <li className={todos.length <= 0 ? "" : "hidden"}> No records found</li>
+      <li className={todos.length === 0 ? "" : "hidden"}> No records found</li>
     </ul>
   );
 };

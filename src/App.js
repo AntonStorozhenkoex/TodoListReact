@@ -40,9 +40,19 @@ function App() {
   const listItemChange = (id) => {
     setTodos(
       todos.map((elem) => {
+        // TODO possible variant
+        // if (elem.id === id) {
+        //   return {
+        //     ...elem,
+        //     isDone: !elem.isDone
+        //   }
+        // }
+        //
+        // return elem
         if (elem.id === id) {
           elem.isDone = !elem.isDone;
         }
+
         return elem;
       })
     );
