@@ -2,9 +2,10 @@ import React from "react";
 import BtnDelete from "./ButtonDelete";
 import "../../index.css";
 
-const ListItem = ({ todo, setTodo, todos, listItemChange }) => {
+const ListItem = ({ todo, setTodo, todos, listItemChange, deleteItemAPI }) => {
   const deleteItem = () => {
     setTodo(todos.filter((item) => item.id !== todo.id));
+    deleteItemAPI(todo);
   };
   return (
     <div className="listItem">

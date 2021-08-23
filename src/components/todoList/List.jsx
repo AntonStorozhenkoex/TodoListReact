@@ -2,11 +2,19 @@ import React from "react";
 import ListItem from "./ListItem";
 import "../../index.css";
 
-const List = ({ todos, setTodo, getTodosByFilter, listItemChange }) => {
+const List = ({
+  todos,
+  setTodo,
+  getTodosByFilter,
+  listItemChange,
+  deleteItemAPI,
+}) => {
+  console.log(todos);
   return (
     <ul className="list">
       {getTodosByFilter.map((todo) => (
         <ListItem
+          deleteItemAPI={deleteItemAPI}
           listItemChange={listItemChange}
           setTodo={setTodo}
           todos={todos}

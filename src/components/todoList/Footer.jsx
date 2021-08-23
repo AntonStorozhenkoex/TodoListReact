@@ -2,10 +2,14 @@ import React from "react";
 import ButtonFooter from "./ButtonFooter";
 import "../../index.css";
 
-const Footer = ({ setTodo, setFilter, filter }) => {
+const Footer = ({ setTodo, setFilter, filter, deleteAllItemsAPI }) => {
   return (
     <footer className="footer">
-      <ButtonFooter title="Clear" filter={filter} onClick={() => setTodo([])} />
+      <ButtonFooter
+        title="Clear"
+        filter={filter}
+        changeFilter={deleteAllItemsAPI}
+      />
       <ButtonFooter
         title="All"
         filter={filter}

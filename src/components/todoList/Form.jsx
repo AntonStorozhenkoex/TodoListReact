@@ -13,7 +13,7 @@ const Form = ({ handleAddTodo }) => {
     setInputValue(e.target.value);
   };
   return (
-    <form onSubmit={(e) => addNewTodo(e)}>
+    <form method="post" onSubmit={(e) => addNewTodo(e)}>
       <Input inputValue={inputValue} changeInputValue={changeInputValue} />
       <Button />
     </form>
