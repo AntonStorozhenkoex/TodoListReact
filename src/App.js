@@ -52,15 +52,6 @@ function App() {
       return todos.filter((elem) => elem.isDone);
     }
   };
-
-  /*function FetchTodo(route,method,body){
-    return fetch(route,{
-      method:method,
-      header:{'Content-Type':'application/json'},
-      body: JSON.stringify(body),
-    })
-  }
-  */
   const handleAddTodo = (inputValue, setInputValue) => {
     if (inputValue) {
       AddNewTodoAPI(inputValue);
