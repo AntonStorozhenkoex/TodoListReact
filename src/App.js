@@ -1,43 +1,18 @@
-import Header from "./components/todoList/Header";
-import TodoList from "./components/todoList/TodoList";
+import { Header } from "./components/todoList/Header";
+import { TodoList } from "./components/todoList/TodoList";
 import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import "./index.css";
+import { link } from "./localhost";
+import { createNewTodo, listItemToggle } from "./services";
 
-function App() {
-  useEffect(() => {
-    fetchData();
-  }, []);
-  const [todos, setTodos] = useState([
-    //{ id: uuidv4(), value: "Начать Todo", isDone: true },
-    //  { id: uuidv4(), value: "Закончить Todo", isDone: false },
-  ]);
+export const App =  () => {
+  const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState("all");
   const fetchData = async () => {
-    const response = await fetch("http://localhost:8081/api/todos");
+    const response = await fetch(link);
     setTodos(await response.json());
   };
-  function AddNewTodoAPI(inputValue) {
-    return fetch("http://localhost:8081/api/todos/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ value: inputValue }),
-    }).then(fetchData);
-  }
-  function listItemChangeAPI(elem) {
-    return fetch(`http://localhost:8081/api/todos/toggle/${elem.id}`, {
-      method: "PUT",
-    }).then(fetchData);
-  }
-  function deleteItemAPI(todo) {
-    return fetch(`http://localhost:8081/api/todos/${todo.id}`, {
-      method: "DELETE",
-    }).then(fetchData);
-  }
-  function deleteAllItemsAPI() {
-    return fetch(`http://localhost:8081/api/todos/`, {
-      method: "DELETE",
-    }).then(fetchData);
-  }
-  const [filter, setFilter] = useState("all");
+
 
   const getTodosByFilter = () => {
     if (filter === "all") {
@@ -54,7 +29,7 @@ function App() {
   };
   const handleAddTodo = (inputValue, setInputValue) => {
     if (inputValue) {
-      AddNewTodoAPI(inputValue);
+      createNewTodo(inputValue).then(fetchData);
       setInputValue("");
     } else {
       alert("Введите корректное значение");
@@ -65,19 +40,21 @@ function App() {
       todos.map((elem) => {
         if (elem.id === id) {
           elem.isDone = !elem.isDone;
-          listItemChangeAPI(elem);
+          listItemToggle(elem).then(fetchData);
         }
         return elem;
       })
     );
   };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="App myApp">
       <Header />
       <TodoList
-        deleteAllItemsAPI={deleteAllItemsAPI}
-        deleteItemAPI={deleteItemAPI}
+        fetchData={fetchData}
         handleAddTodo={handleAddTodo}
         listItemChange={listItemChange}
         filter={filter}
@@ -90,4 +67,3 @@ function App() {
   );
 }
 
-export default App;

@@ -1,30 +1,31 @@
 import React from "react";
-import ListItem from "./ListItem";
-import "../../index.css";
+import { ListItem } from "./ListItem";
 
-const List = ({
+export const List = ({
   todos,
   setTodo,
+  fetchData,
   getTodosByFilter,
   listItemChange,
   deleteItemAPI,
 }) => {
-  console.log(todos);
   return (
     <ul className="list">
-      {getTodosByFilter.map((todo) => (
-        <ListItem
-          deleteItemAPI={deleteItemAPI}
-          listItemChange={listItemChange}
-          setTodo={setTodo}
-          todos={todos}
-          todo={todo}
-          key={todo.id}
-        />
-      ))}
-      <li className={todos.length === 0 ? "" : "hidden"}> No records found</li>
+      {todos.length > 0 ? (
+        getTodosByFilter.map((todo) => (
+          <ListItem
+            fetchData={fetchData}
+            deleteItemAPI={deleteItemAPI}
+            listItemChange={listItemChange}
+            setTodo={setTodo}
+            todos={todos}
+            todo={todo}
+            key={todo.id}
+          />
+        ))
+      ) : (
+        <li>No records found</li>
+      )}
     </ul>
   );
 };
-
-export default List;

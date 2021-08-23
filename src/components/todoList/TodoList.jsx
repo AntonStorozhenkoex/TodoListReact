@@ -1,12 +1,13 @@
 import React from "react";
-import Form from "./Form";
-import List from "./List";
-import Footer from "./Footer";
+import { Form } from "./Form";
+import { List } from "./List";
+import { Footer } from "./Footer";
 
-const TodoList = ({
-  deleteAllItemsAPI,
+export const TodoList = ({
+  deleteAllItems,
   newData,
   todos,
+  fetchData,
   setTodos,
   getTodosByFilter,
   setFilter,
@@ -21,19 +22,19 @@ const TodoList = ({
       <List
         deleteItemAPI={deleteItemAPI}
         newData={newData}
+        fetchData={fetchData}
         listItemChange={listItemChange}
         getTodosByFilter={getTodosByFilter}
         setTodo={setTodos}
         todos={todos}
       />
       <Footer
+        fetchData={fetchData}
         filter={filter}
         setFilter={setFilter}
         setTodo={setTodos}
-        deleteAllItemsAPI={deleteAllItemsAPI}
+        deleteAllItems={deleteAllItems}
       />
     </div>
   );
 };
-
-export default TodoList;

@@ -2,10 +2,12 @@ body {
   margin: 0;
   font-family: Manjari, "sans-serif";
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .root {
   height: 85vh;
   display: flex;
@@ -14,6 +16,7 @@ code {
   margin: 0 auto;
   width: 500px;
 }
+
 .myApp {
   width: 100%;
   padding: 20px;
@@ -35,6 +38,7 @@ code {
   padding: 5px;
   width: 75%;
 }
+
 .addButton {
   margin-left: 10px;
   padding: 10px 17px;
@@ -46,11 +50,13 @@ code {
   -webkit-user-select: none;
   user-select: none;
 }
+
 .list {
   list-style-type: none;
   padding: 0;
   margin: 10px 0 10px 0;
 }
+
 .listItem {
   border-radius: 5px;
   width: 95%;
@@ -59,38 +65,46 @@ code {
   margin-bottom: 15px;
   transition: background-color 0.5s;
 }
+
 .listItem:hover {
   cursor: pointer;
   background-color: lightgray;
 }
+
 li {
   padding: 10px 0 10px 10px;
   width: 100%;
 }
+
 .deleteButton {
   border: none;
   background-color: transparent;
   color: red;
 }
+
 .deleteButton:hover {
   cursor: pointer;
   background-color: lightgray;
 }
+
 .done {
   text-decoration: line-through;
   color: grey;
   display: inline-block;
 }
+
 .notDone {
   color: black;
   display: inline-block;
 }
+
 .footer {
   display: flex;
   padding-top: 5px;
   width: 100%;
   border-top: 1px solid rgba(27, 135, 217, 0.39);
 }
+
 .footerButton {
   font-family: Manjari, "sans-serif";
   font-size: 16px;
@@ -103,12 +117,15 @@ li {
   width: 100px;
   height: 30px;
 }
+
 .footerButton:last-child {
   border-right: 1px solid rgba(27, 135, 217, 0.39);
 }
+
 .footerButton:hover {
   background-color: #b6e3d4;
 }
+
 .selectedButton {
   border: none;
   font-family: Manjari, "sans-serif";
@@ -119,6 +136,5 @@ li {
   width: 100px;
   height: 30px;
 }
-.hidden {
-  display: none;
-}
+
+

@@ -1,11 +1,10 @@
 import React from "react";
-import BtnDelete from "./ButtonDelete";
-import "../../index.css";
-
-const ListItem = ({ todo, setTodo, todos, listItemChange, deleteItemAPI }) => {
+import {BtnDelete} from "./ButtonDelete";
+import {deleteTodo} from "../../services";
+export  const ListItem = ({ todo, setTodo, todos, listItemChange,fetchData}) => {
   const deleteItem = () => {
     setTodo(todos.filter((item) => item.id !== todo.id));
-    deleteItemAPI(todo);
+    deleteTodo(todo).then(fetchData);
   };
   return (
     <div className="listItem">
@@ -19,4 +18,3 @@ const ListItem = ({ todo, setTodo, todos, listItemChange, deleteItemAPI }) => {
     </div>
   );
 };
-export default ListItem;

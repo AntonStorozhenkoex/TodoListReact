@@ -1,9 +1,9 @@
-import React from "react";
-import Input from "./Input";
-import Button from "./Button";
-import { useState } from "react";
+import React,{useState} from "react";
+import {Input} from "./Input";
+import {Button} from "./Button";
 
-const Form = ({ handleAddTodo }) => {
+
+export const Form = ({ handleAddTodo }) => {
   const [inputValue, setInputValue] = useState("");
   const addNewTodo = (e) => {
     e.preventDefault();
@@ -13,11 +13,11 @@ const Form = ({ handleAddTodo }) => {
     setInputValue(e.target.value);
   };
   return (
-    <form method="post" onSubmit={(e) => addNewTodo(e)}>
+    <form onSubmit={(e) => addNewTodo(e)}>
       <Input inputValue={inputValue} changeInputValue={changeInputValue} />
       <Button />
     </form>
   );
 };
 
-export default Form;
+

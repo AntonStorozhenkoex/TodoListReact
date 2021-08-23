@@ -1,15 +1,22 @@
 import React from "react";
-import "../../index.css";
+import { deleteAllItems } from "../../services";
 
-const ButtonFooter = ({ changeFilter, title, filter, filterExpValue }) => {
-  return (
-    <button
-      className={filterExpValue === filter ? "selectedButton" : "footerButton"}
-      onClick={changeFilter}
-    >
-      {title}
-    </button>
-  );
-};
-
-export default ButtonFooter;
+export const ButtonFooter = ({
+  changeFilter,
+  title,
+  filter,
+  filterExpValue,
+  fetchData,
+}) => (
+  <button
+    className={filterExpValue === filter ? "selectedButton" : "footerButton"}
+    onClick={() => {
+      changeFilter();
+      if (title === "Clear") {
+        deleteAllItems().then(fetchData);
+      }
+    }}
+  >
+    {title}
+  </button>
+);
